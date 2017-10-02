@@ -6,6 +6,7 @@ require 'twilio-ruby'
 enable :sessions
 
 @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+ENV['PATH'] = ENV['PATH'] + ';' + File.expand_path(File.dirname(FILE) + '/libs')
 
 configure :development do
   require 'dotenv'
